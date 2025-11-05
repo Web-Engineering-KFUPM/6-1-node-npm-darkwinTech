@@ -175,8 +175,8 @@ After completing all TODOs, test your calculator:
 
 */
 // TODO 1: Import Required Modules (in calculator.js)
-import {add, subtract, multiply, divide} from './utils/operations.js'
-import {parseNumbers, isValidOperation } from "./utils/parser.js";
+import { add, subtract, multiply, divide } from "./utils/operations.js";
+import { parseNumbers, isValidOperation } from "./utils/parser.js";
 import _ from "lodash";
 
 // TODO 2: Parse Command Line Arguments (in calculator.js)
@@ -228,42 +228,3 @@ if (!Number.isFinite(result)) {
 console.log(`Result: ${result}`);
 
 // TODO 4: Create Math Operation Functions (in utils/operations.js)
-// 1
-export function add(numbers) {
-    return numbers.reduce((sum, n) => sum + n, 0);
-}
-// 2
-export function subtract(numbers) {
-    if (numbers.length === 0) return 0;
-    return numbers.slice(1).reduce((acc, n) => acc - n, numbers[0]);
-}
-// 3
-export function multiply(numbers) {
-    if (numbers.length === 0) return 0; // common choice; empty product could also be 1, but 0 is friendlier here
-    return numbers.reduce((acc, n) => acc * n, 1);
-}
-// 4
-export function divide(numbers) {
-    if (numbers.length === 0) return NaN;
-    // check for division by zero in the tail
-    for (let i = 1; i < numbers.length; i++) {
-        if (numbers[i] === 0) {
-            throw new Error("Division by zero");
-        }
-    }
-    return numbers.slice(1).reduce((acc, n) => acc / n, numbers[0]);
-}
-
-// TODO 5: Create Parser Functions Using Lodash (in utils/parser.js)
-
-export function parseNumbers(input) {
-    const nums = _.map(input, (s) => Number(s));
-    return _.filter(nums, Number.isFinite);
-}
-
-export function isValidOperation(operation) {
-    const validOps = ["add", "subtract", "multiply", "divide"];
-    return _.includes(validOps, operation);
-}
-
-
