@@ -232,6 +232,10 @@ console.log(`Result: ${result}`);
 export function add(numbers) {
     return numbers.reduce((sum, n) => sum + n, 0);
 }
-
+// 2
+export function subtract(numbers) {
+    if (numbers.length === 0) return 0;
+    return numbers.slice(1).reduce((acc, n) => acc - n, numbers[0]);
+}
 
 
