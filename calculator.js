@@ -227,5 +227,11 @@ if (!Number.isFinite(result)) {
 
 console.log(`Result: ${result}`);
 
+// TODO 4: Create Math Operation Functions (in utils/operations.js)
+// 1
+export function add(numbers) {
+    return numbers.reduce((sum, n) => sum + n, 0);
+}
+
 
 
