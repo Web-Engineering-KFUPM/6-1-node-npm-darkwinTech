@@ -178,3 +178,10 @@ After completing all TODOs, test your calculator:
 import {add, subtract, multiply, divide} from './utils/operations.js'
 import {parseNumbers, isValidOperation } from "./utils/parser.js";
 import _ from "lodash";
+
+// TODO 2: Parse Command Line Arguments (in calculator.js)
+const operation = process.argv[2];
+const rawNumbers = process.argv.slice(3);
+
+
+
