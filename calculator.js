@@ -254,4 +254,16 @@ export function divide(numbers) {
     return numbers.slice(1).reduce((acc, n) => acc / n, numbers[0]);
 }
 
+// TODO 5: Create Parser Functions Using Lodash (in utils/parser.js)
+
+export function parseNumbers(input) {
+    const nums = _.map(input, (s) => Number(s));
+    return _.filter(nums, Number.isFinite);
+}
+
+export function isValidOperation(operation) {
+    const validOps = ["add", "subtract", "multiply", "divide"];
+    return _.includes(validOps, operation);
+}
+
 
