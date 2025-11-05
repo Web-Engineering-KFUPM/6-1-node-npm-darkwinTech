@@ -237,5 +237,10 @@ export function subtract(numbers) {
     if (numbers.length === 0) return 0;
     return numbers.slice(1).reduce((acc, n) => acc - n, numbers[0]);
 }
+// 3
+export function multiply(numbers) {
+    if (numbers.length === 0) return 0; // common choice; empty product could also be 1, but 0 is friendlier here
+    return numbers.reduce((acc, n) => acc * n, 1);
+}
 
 
